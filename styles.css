@@ -1840,7 +1840,8 @@ body.service-page main {
   color: #f4fdff;
 }
 
-.footer__col--brand .logo {
+.footer__col--brand .logo,
+.footer__col--brand .brand {
   margin-bottom: 12px;
 }
 
