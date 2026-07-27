@@ -10,10 +10,11 @@
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Sora:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="topbar" id="topbar">
     <div class="topbar__inner">
       <a class="brand" href="#home" aria-label="Brookline Family Dentistry home">
@@ -31,7 +32,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="panel panel--hero" id="home">
       <div class="hero-glow hero-glow--one" aria-hidden="true"></div>
       <div class="hero-glow hero-glow--two" aria-hidden="true"></div>
@@ -225,7 +226,7 @@
           <p class="testimonial-mark" aria-hidden="true">“</p>
           <p class="testimonial-stars" id="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</p>
           <h3 id="testimonial-title">The Team Is Amazing</h3>
-          <p id="testimonial-text">
+          <p id="testimonial-text" aria-live="polite">
             I highly recommend Dr. Jinna and the team. Everyone is professional, kind, and truly makes you feel like family.
           </p>
 

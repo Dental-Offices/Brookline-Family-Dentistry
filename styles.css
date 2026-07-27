@@ -9,7 +9,7 @@
   --line: #d7dde3;
   --white: #ffffff;
 
-  --font-display: 'Sora', sans-serif;
+  --font-display: 'Inter', sans-serif;
   --font-body: 'DM Sans', sans-serif;
 
   --radius-xl: 18px;
@@ -29,12 +29,65 @@ html {
   scroll-snap-type: y proximity;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+
+  .hero-glow,
+  .hero-float {
+    animation: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 body {
   background: radial-gradient(circle at 10% 0%, #1d2934 0%, var(--bg) 45%);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: clamp(18px, 1.06vw, 21px);
-  line-height: 1.6;
+  font-size: clamp(18px, 1.1vw, 21px);
+  line-height: 1.65;
+}
+
+:focus-visible {
+  outline: 3px solid var(--aqua-dark);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 8px;
+  z-index: 100;
+  background: var(--aqua-dark);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 0 0 8px 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #fff;
+  outline-offset: -4px;
 }
 
 a {
@@ -288,8 +341,6 @@ main {
   margin-bottom: 16px;
   max-width: 520px;
   text-transform: uppercase;
-  text-decoration: underline;
-  text-underline-offset: 8px;
 }
 
 .hero-main p {
@@ -382,7 +433,7 @@ main {
 
 .hero-float--bottom span {
   font-size: 0.86rem;
-  color: #425a63;
+  color: #2c4752;
 }
 
 @keyframes heroBob {
