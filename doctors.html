@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Doctors | Brookline Family Dentistry</title>
+  <meta name="description" content="Meet Dr. James Kyros and Dr. Meer Ahmed — the experienced, compassionate dental team at Brookline Family Dentistry in Pittsburgh, PA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ------------------------------------------------
+       Doctors page — page-scoped styles
+    ------------------------------------------------ */
+
+    .doctors-intro {
+      background: #f2f7f9;
+      padding: clamp(28px, 4vw, 48px) 0;
+      text-align: center;
+      border-bottom: 1px solid #d4e6ee;
+    }
+
+    .doctors-intro p {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      color: #344f5c;
+      line-height: 1.75;
+    }
+
+    /* Doctor section alternating backgrounds */
+    .doctors-section {
+      padding: clamp(48px, 7vw, 96px) 0;
+    }
+
+    .doctors-section--light {
+      background: #f7fbfc;
+    }
+
+    /* Two-column profile layout */
+    .doctor-profile {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: clamp(36px, 6vw, 80px);
+      align-items: start;
+    }
+
+    .doctor-profile--reversed {
+      grid-template-columns: 1fr 400px;
+    }
+
+    .doctor-profile--reversed .doctor-photo-col {
+      order: 2;
+    }
+
+    /* Photo column */
+    .doctor-photo-col {
+      position: relative;
+    }
+
+    .doctor-photo {
+      width: 100%;
+      border-radius: 28px;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+      box-shadow: 0 32px 60px rgba(9, 32, 45, 0.24);
+      display: block;
+    }
+
+    .doctor-photo-badge {
+      position: absolute;
+      bottom: -18px;
+      left: 22px;
+      background: linear-gradient(135deg, #185e78, #0d3f52);
+      color: #eaf7ff;
+      border-radius: 18px;
+      padding: 14px 22px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      font-family: var(--font-display);
+      letter-spacing: 0.02em;
+      box-shadow: 0 16px 32px rgba(9, 32, 45, 0.26);
+      line-height: 1.2;
+    }
+
+    .doctor-photo-badge strong {
+      display: block;
+      font-size: 1.65rem;
+      color: var(--aqua);
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    /* Bio column */
+    .doctor-bio {
+      padding-top: 6px;
+    }
+
+    .doctor-eyebrow {
+      display: inline-block;
+      font-size: 0.82rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #1b8197;
+      margin-bottom: 10px;
+    }
+
+    .doctor-name {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      color: #0c2a36;
+      margin-bottom: 4px;
+    }
+
+    .doctor-title {
+      font-size: 1.05rem;
+      color: #3b7e92;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .doctor-bio p {
+      font-size: 1.07rem;
+      line-height: 1.8;
+      color: #384f5a;
+      margin-bottom: 14px;
+    }
+
+    /* Credential groups */
+    .doctor-credentials {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding-top: 24px;
+      border-top: 1px solid #d0e4ec;
+    }
+
+    .credential-group-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #2588a0;
+      margin-bottom: 8px;
+    }
+
+    .credential-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .credential-chip {
+      background: rgba(62, 194, 217, 0.1);
+      border: 1px solid rgba(62, 194, 217, 0.38);
+      color: #0c4a5e;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .doctor-cta {
+      margin-top: 30px;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .doctor-profile,
+      .doctor-profile--reversed {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .doctor-profile--reversed .doctor-photo-col {
+        order: 0;
+      }
+
+      .doctor-photo {
+        max-width: 380px;
+        margin: 0 auto;
+        aspect-ratio: 1 / 1;
+      }
+
+      .doctor-photo-badge {
+        left: auto;
+        right: 22px;
+        bottom: -14px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .doctor-photo-badge {
+        right: 12px;
+        bottom: -12px;
+        padding: 10px 14px;
+      }
+
+      .doctor-photo-badge strong {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body class="service-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="topbar" id="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html" aria-label="Brookline Family Dentistry home">
+        <span class="brand__icon">Q</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="main-nav" aria-label="Primary">
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Treatments</a>
+        <a href="doctors.html" aria-current="page">Our Doctors</a>
+        <a href="index.html#contact">Location</a>
+      </nav>
+      <a class="btn" href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf" target="_blank" rel="noopener noreferrer">Book An Appointment</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── Hero ────────────────────────────────────────── -->
+    <section
+      class="service-hero"
+      style="--service-hero-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80');"
+    >
+      <div class="service-hero__overlay"></div>
+      <div class="container service-hero__content">
+        <p class="hero__eyebrow reveal">Our Team</p>
+        <h1 class="service-hero__title reveal" data-delay="100">Meet Our Doctors</h1>
+        <p class="service-hero__text reveal" data-delay="200">
+          Experienced, compassionate dentists committed to lifelong learning and personalized
+          care — proudly serving Pittsburgh families for over 15 years.
+        </p>
+        <div class="hero__actions reveal" data-delay="300">
+          <a
+            href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--primary btn--lg"
+          >Request an Appointment</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Intro band ────────────────────────────────────── -->
+    <div class="doctors-intro">
+      <div class="container">
+        <p>
+          Dr. Kyros and Dr. Ahmed are dedicated to lifelong learning through continuing
+          education courses. They make every effort to stay abreast of the most current
+          dental techniques and deliver the highest quality of care to every patient.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Dr. James Kyros ────────────────────────────────── -->
+    <section class="doctors-section service-content" id="dr-kyros">
+      <div class="container">
+        <div class="doctor-profile reveal">
+
+          <div class="doctor-photo-col">
+            <img
+              class="doctor-photo"
+              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=700&q=80"
+              alt="Portrait of Dr. James Kyros"
+              loading="lazy"
+            />
+            <div class="doctor-photo-badge">
+              <strong>15+</strong>
+              Years of Care
+            </div>
+          </div>
+
+          <div class="doctor-bio">
+            <span class="doctor-eyebrow">General Dentist &middot; Pittsburgh, PA</span>
+            <h2 class="doctor-name">Dr. James Kyros</h2>
+            <p class="doctor-title">D.M.D. &middot; Master, Academy of General Dentistry</p>
+
+            <p>Dr. Kyros is an honors graduate of the University of Pittsburgh School of Dental Medicine, where he received first-rate training in all aspects of general dentistry. After completing his degree, he completed a General Practice Residency at the Veterans Administration Hospital in Oakland, further deepening his clinical expertise.</p>
+            <p>Through a combination of state-of-the-art technology, sensible treatment plans, and genuine devotion to each patient's unique needs, Dr. Kyros preserves healthy teeth and gums, alleviates oral discomfort, and improves the appearance of smiles every day.</p>
+            <p>His unique blend of artistic and technical skill has produced durable, aesthetic results for thousands of patients throughout the Pittsburgh area.</p>
+
+            <div class="doctor-credentials">
+              <div>
+                <p class="credential-group-label">Education &amp; Training</p>
+                <div class="credential-chips">
+                  <span class="credential-chip">University of Pittsburgh School of Dental Medicine</span>
+                  <span class="credential-chip">General Practice Residency — VA Hospital, Oakland</span>
+                </div>
+              </div>
+              <div>
+                <p class="credential-group-label">Credentials</p>
+                <div class="credential-chips">
+                  <span class="credential-chip">D.M.D.</span>
+                  <span class="credential-chip">Honors Graduate</span>
+                  <span class="credential-chip">Master — Academy of General Dentistry</span>
+                </div>
+              </div>
+              <div>
+                <p class="credential-group-label">Areas of Focus</p>
+                <div class="credential-chips">
+                  <span class="credential-chip">Preventive Dentistry</span>
+                  <span class="credential-chip">Cosmetic Treatments</span>
+                  <span class="credential-chip">Restorative Dentistry</span>
+                  <span class="credential-chip">Crown &amp; Bridge</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="doctor-cta">
+              <a
+                href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--primary"
+              >Schedule with Dr. Kyros</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Dr. Meer Ahmed ─────────────────────────────────── -->
+    <section class="doctors-section doctors-section--light" id="dr-ahmed">
+      <div class="container">
+        <div class="doctor-profile doctor-profile--reversed reveal" data-delay="80">
+
+          <div class="doctor-photo-col">
+            <img
+              class="doctor-photo"
+              src="images/drahmed.jpg"
+              alt="Portrait of Dr. Meer Ahmed"
+              loading="lazy"
+            />
+            <div class="doctor-photo-badge">
+              <strong>ADA</strong>
+              Member
+            </div>
+          </div>
+
+          <div class="doctor-bio">
+            <span class="doctor-eyebrow">General Dentist &middot; Pittsburgh, PA</span>
+            <h2 class="doctor-name">Dr. Meer Ahmed</h2>
+            <p class="doctor-title">D.M.D., M.Sc. &middot; RCPSG Member</p>
+
+            <p>Dr. Meer Ahmed has been in dentistry for over 15 years. He is a friendly and dedicated general dentist with a genuine passion for getting to know each patient and delivering excellent, individualized care. Dr. Ahmed believes in a personalized approach to every visit and actively involves patients in their treatment decisions.</p>
+            <p>Before joining Brookline Family Dentistry, Dr. Ahmed completed his dental education in India and earned postgraduate credentials from the Royal College of Physicians and Surgeons of Glasgow, UK. He then honed his clinical skills in renowned hospitals across the Middle East before immigrating to the United States to complete his Master's and Doctorate at the University of Pittsburgh School of Dental Medicine — graduating with multiple awards and honors.</p>
+            <p>Dr. Ahmed makes every effort to stay current through continuous education and remains an active member of several international dental organizations. He educates patients on maintaining not only a healthy smile, but a healthy body overall.</p>
+
+            <div class="doctor-credentials">
+              <div>
+                <p class="credential-group-label">Education &amp; Training</p>
+                <div class="credential-chips">
+                  <span class="credential-chip">University of Pittsburgh School of Dental Medicine</span>
+                  <span class="credential-chip">Royal College of Physicians &amp; Surgeons of Glasgow</span>
+                </div>
+              </div>
+              <div>
+                <p class="credential-group-label">Professional Memberships</p>
+                <div class="credential-chips">
+                  <span class="credential-chip">American Dental Association (ADA)</span>
+                  <span class="credential-chip">Pennsylvania Dental Association (PDA)</span>
+                  <span class="credential-chip">RCPSG</span>
+                </div>
+              </div>
+              <div>
+                <p class="credential-group-label">Clinical Expertise</p>
+                <div class="credential-chips">
+                  <span class="credential-chip">Surgical Extractions</span>
+                  <span class="credential-chip">Root Canals</span>
+                  <span class="credential-chip">Crown &amp; Bridge</span>
+                  <span class="credential-chip">Dental Implants</span>
+                  <span class="credential-chip">Invisalign</span>
+                  <span class="credential-chip">Removable Dentures</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="doctor-cta">
+              <a
+                href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--primary"
+              >Schedule with Dr. Ahmed</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA Band ──────────────────────────────────────── -->
+    <div class="service-cta-band">
+      <div class="container">
+        <div class="service-cta-band__inner">
+          <div>
+            <p class="service-cta-band__title">Ready to meet our team in person?</p>
+            <p class="service-cta-band__text">We welcome new patients of all ages. Call us or request an appointment online — we'd love to welcome you to the Brookline Family.</p>
+          </div>
+          <div class="service-cta-band__actions">
+            <a
+              href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--primary btn--lg"
+            >Request Appointment</a>
+            <a href="tel:+14125313155" class="btn btn--outline-light btn--lg">(412) 531-3155</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+
+      <div class="footer__col footer__col--brand">
+        <a href="index.html" class="brand" aria-label="Brookline Family Dentistry home">
+          <span class="brand__icon">Q</span>
+        </a>
+        <p class="footer__tagline">Your Smile, Our Priority.</p>
+        <p class="footer__address">1256 Brookline Blvd<br />Pittsburgh, PA 15226, USA</p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__col-title">Navigate</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="doctors.html">Our Doctors</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__col-title">Services</h4>
+        <ul class="footer__links">
+          <li><a href="services/checkup-and-cleaning.html">Checkup &amp; Cleaning</a></li>
+          <li><a href="services/cosmetic-dentistry.html">Cosmetic Procedures</a></li>
+          <li><a href="services/restorative-dentistry.html">Restorative Procedures</a></li>
+          <li><a href="services/dental-implants.html">Dental Implants</a></li>
+          <li><a href="services/oral-surgery.html">Oral Surgery</a></li>
+          <li><a href="services/dentures.html">Dentures</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__col-title">Office Hours</h4>
+        <ul class="footer__hours">
+          <li><span>Monday</span><span>8:00am – 4:00pm</span></li>
+          <li><span>Tuesday</span><span>8:00am – 8:00pm</span></li>
+          <li><span>Wednesday</span><span>10:00am – 4:00pm</span></li>
+          <li><span>Thursday</span><span>10:00am – 8:00pm</span></li>
+        </ul>
+        <a href="tel:+14125313155" class="btn btn--outline-light btn--sm footer__phone">(412) 531-3155</a>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>&copy; <span id="year"></span> Brookline Family Dentistry. All rights reserved.</p>
+        <p>1256 Brookline Blvd, Pittsburgh, PA 15226, USA</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
