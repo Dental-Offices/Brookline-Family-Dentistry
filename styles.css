@@ -114,6 +114,13 @@ a {
   gap: 16px;
 }
 
+.topbar .btn {
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
 .brand {
   display: inline-grid;
   place-items: center;
@@ -196,6 +203,7 @@ main {
 }
 
 .panel--hero {
+  scroll-snap-align: none;
   position: relative;
   isolation: isolate;
   background:
