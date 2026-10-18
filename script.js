@@ -112,7 +112,7 @@ if (
   const dots = testimonials.map((_, index) => {
     const dot = document.createElement('button');
     dot.type = 'button';
-    dot.className = 'reviews-dot';
+    dot.className = 'h-2.5 w-2.5 rounded-full bg-navy/20 transition';
     dot.setAttribute('aria-label', `Show review ${index + 1}`);
     dot.addEventListener('click', () => {
       testimonialIndex = index;
@@ -140,7 +140,9 @@ if (
     testimonialProgress.style.width = `${(item.score / 5) * 100}%`;
 
     dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === testimonialIndex);
+      const isActive = index === testimonialIndex;
+      dot.classList.toggle('bg-primary', isActive);
+      dot.classList.toggle('bg-navy/20', !isActive);
     });
   };
 

@@ -10,187 +10,260 @@
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2eafc2',
+            navy: '#101b22',
+            ice: '#d8ecf0',
+            slate: '#625e59',
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, .font-heading { font-family: 'Montserrat', sans-serif; }
+
+    @media (max-width: 1023px) {
+      #main-nav {
+        position: fixed;
+        top: 84px;
+        left: 1rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.25rem;
+        background: #101b22;
+        border-radius: 1.5rem;
+        padding: 1rem 1.25rem;
+        box-shadow: 0 24px 48px rgba(16, 27, 34, 0.45);
+        z-index: 40;
+      }
+      #main-nav.open { display: flex; }
+      #main-nav a { padding: 0.75rem 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      #main-nav a:last-child { border-bottom: none; }
+    }
+  </style>
 </head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <header class="topbar" id="topbar">
-    <div class="topbar__inner">
-      <a class="brand" href="#home" aria-label="Brookline Family Dentistry home">
-        <svg class="brand__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.572 311.572" fill="currentColor" aria-hidden="true"><path d="M239.964,0c-38.262,0-45.435,37.55-84.173,37.55C117.059,37.55,109.885,0,71.619,0C24.76,0,4.961,47.903,4.961,94.756 s39.731,216.817,86.584,216.817c19.814,0,24.366-108.723,64.241-108.723s44.426,108.723,64.241,108.723 c46.858,0,86.584-169.958,86.584-216.817S286.817,0,239.964,0z"/></svg>
+<body class="bg-white text-navy antialiased">
+  <a class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-5 focus:py-3 focus:text-white focus:font-semibold" href="#main-content">Skip to content</a>
+
+  <header class="sticky top-0 z-50 bg-navy/95 backdrop-blur border-b border-white/5" id="topbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
+      <a class="flex items-center gap-2.5 text-white" href="#home" aria-label="Brookline Family Dentistry home">
+        <svg class="h-8 w-8 text-primary shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.572 311.572" fill="currentColor" aria-hidden="true"><path d="M239.964,0c-38.262,0-45.435,37.55-84.173,37.55C117.059,37.55,109.885,0,71.619,0C24.76,0,4.961,47.903,4.961,94.756 s39.731,216.817,86.584,216.817c19.814,0,24.366-108.723,64.241-108.723s44.426,108.723,64.241,108.723 c46.858,0,86.584-169.958,86.584-216.817S286.817,0,239.964,0z"/></svg>
+        <span class="font-heading font-bold text-base sm:text-lg leading-tight">Brookline Family<br class="hidden sm:block" /> Dentistry</span>
       </a>
-      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav" id="main-nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#services">Treatments</a>
-        <a href="doctors.html">Our Doctors</a>
-        <a href="#contact">Location</a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-base text-white/80 font-medium" id="main-nav" aria-label="Primary">
+        <a class="hover:text-primary transition" href="#about">About</a>
+        <a class="hover:text-primary transition" href="#services">Treatments</a>
+        <a class="hover:text-primary transition" href="doctors.html">Our Doctors</a>
+        <a class="hover:text-primary transition" href="#contact">Location</a>
       </nav>
-      <a class="btn" href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf" target="_blank" rel="noopener noreferrer">Book An Appointment</a>
+
+      <div class="flex items-center gap-3">
+        <a class="hidden sm:inline-flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-white font-semibold text-sm shadow-lg shadow-primary/30 hover:bg-primary/90 transition" href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf" target="_blank" rel="noopener noreferrer">Book An Appointment</a>
+        <button class="lg:hidden text-white p-2 -mr-2" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="panel panel--hero" id="home">
-      <div class="hero-glow hero-glow--one" aria-hidden="true"></div>
-      <div class="hero-glow hero-glow--two" aria-hidden="true"></div>
+    <section class="relative overflow-hidden bg-gradient-to-b from-ice via-ice/60 to-white pt-16 pb-28 sm:pt-20 sm:pb-36" id="home">
+      <div class="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-primary/20 blur-3xl" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute top-1/2 -left-32 h-80 w-80 rounded-full bg-primary/10 blur-3xl" aria-hidden="true"></div>
 
-      <div class="hero-main">
-        <div class="hero-copy">
-          <p class="hero-kicker">Your Smile, Our Priority</p>
-          <h1>YOUR DREAM SMILE IS OUR GOAL</h1>
-          <p>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight text-navy">Brookline <span class="text-primary">Family Dentistry</span></p>
+          <h1 class="mt-4 font-heading text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-[1.08] text-navy">Your Dream Smile Is Our Goal</h1>
+          <p class="mt-6 max-w-xl text-lg text-slate">
             We provide routine exams, cleanings, fillings, whitening, and advanced options like implants, crowns, and restorative dentistry.
           </p>
-          <div class="hero-actions">
-            <a class="btn" href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf" target="_blank" rel="noopener noreferrer">Request Appointment</a>
-            <a class="btn btn--ghost" href="#services">Explore Services</a>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a class="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-white font-semibold shadow-xl shadow-primary/30 hover:-translate-y-0.5 transition" href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf" target="_blank" rel="noopener noreferrer">Request Appointment</a>
+            <a class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-navy font-semibold border-2 border-navy/10 hover:border-navy/30 transition" href="#services">Explore Services</a>
           </div>
-          <div class="hero-stats" aria-label="Practice highlights">
-            <div class="hero-stat">
-              <strong>15+</strong>
-              <span>Years of Care</span>
+
+          <div class="mt-12 flex flex-wrap gap-4" aria-label="Practice highlights">
+            <div class="flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-lg shadow-navy/5">
+              <span class="font-heading text-xl font-extrabold text-primary">15+</span>
+              <span class="text-sm font-medium text-slate leading-tight">Years of<br />Care</span>
             </div>
-            <div class="hero-stat">
-              <strong>8+</strong>
-              <span>Core Treatments</span>
+            <div class="flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-lg shadow-navy/5">
+              <span class="font-heading text-xl font-extrabold text-primary">8+</span>
+              <span class="text-sm font-medium text-slate leading-tight">Core<br />Treatments</span>
             </div>
-            <div class="hero-stat">
-              <strong>5-Star</strong>
-              <span>Patient Experience</span>
+            <div class="flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-lg shadow-navy/5">
+              <span class="font-heading text-xl font-extrabold text-primary">5-Star</span>
+              <span class="text-sm font-medium text-slate leading-tight">Patient<br />Experience</span>
             </div>
           </div>
         </div>
-        <div class="hero-visual">
-          <img
-            class="hero-photo"
-            src="https://images.unsplash.com/photo-1607748851687-ba9a10438621?auto=format&fit=crop&w=900&q=85"
-            alt="Smiling patient"
-            loading="lazy"
-          />
-          <div class="hero-float hero-float--top" aria-hidden="true">
-            <span>New Patients Welcome</span>
+
+        <div class="relative mt-8 lg:mt-0">
+          <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-navy/20">
+            <img
+              class="h-[380px] sm:h-[460px] lg:h-[520px] w-full object-cover"
+              src="https://images.unsplash.com/photo-1607748851687-ba9a10438621?auto=format&fit=crop&w=900&q=85"
+              alt="Smiling diverse group of patients"
+              loading="lazy"
+            />
           </div>
-          <div class="hero-float hero-float--bottom" aria-hidden="true">
-            <strong>Open Today</strong>
-            <span>Call (412) 531-3155</span>
+
+          <div class="absolute -top-6 left-4 sm:-left-8 flex items-center gap-3 rounded-2xl bg-white px-5 py-3.5 shadow-xl shadow-navy/10">
+            <span class="h-2.5 w-2.5 rounded-full bg-primary"></span>
+            <span class="font-heading text-sm font-bold text-navy">New Patients Welcome</span>
+          </div>
+
+          <div class="absolute -bottom-6 right-4 sm:-right-8 rounded-2xl bg-navy px-5 py-4 shadow-xl shadow-navy/30 text-white">
+            <p class="font-heading text-sm font-bold">Open Today</p>
+            <p class="text-xs text-white/70 mt-0.5">Call (412) 531-3155</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="panel panel--light panel--about" id="about">
-      <div class="about-layout">
-        <div class="about-visual">
+    <section class="py-24 sm:py-32 bg-white" id="about">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+        <div class="relative">
           <img
-            class="about-visual__main"
+            class="w-full h-[320px] sm:h-[420px] object-cover rounded-3xl shadow-2xl shadow-navy/10"
             src="./images/dentalTools.JPG"
             alt="Modern dental chair and tools"
             loading="lazy"
           />
-          <div class="about-badge" aria-label="15 plus years of care">
-            <strong>15+</strong>
-            <span>Years of Care</span>
+          <div class="absolute -top-6 -left-4 sm:-left-8 rounded-2xl bg-white px-5 py-4 shadow-xl shadow-navy/10">
+            <p class="font-heading text-2xl font-extrabold text-primary">15+</p>
+            <p class="text-xs font-medium text-slate">Years of Care</p>
           </div>
           <img
-            class="about-visual__accent"
+            class="hidden sm:block absolute -bottom-10 -right-8 h-40 w-40 object-cover rounded-2xl shadow-xl shadow-navy/20 border-4 border-white"
             src="https://images.unsplash.com/photo-1600170311833-c2cf5280ce49?auto=format&fit=crop&w=700&q=80"
             alt="Dentist consulting a patient"
             loading="lazy"
           />
         </div>
 
-        <div class="about-copy">
-          <p class="about-copy__kicker">About Us</p>
-          <h2>Where Experience, Skill &amp; Compassion Come Together</h2>
-          <p>
+        <div>
+          <p class="font-heading text-sm font-bold tracking-wide text-primary uppercase">About Us</p>
+          <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold text-navy leading-tight">Where Experience, Skill &amp; Compassion Come Together</h2>
+          <p class="mt-6 text-slate leading-relaxed">
             At Brookline Family Dentistry, we believe every patient deserves personalized,
             compassionate care in a comfortable setting. Our team combines modern techniques
             with a gentle approach to make each visit smooth and stress-free.
           </p>
-          <p>
+          <p class="mt-4 text-slate leading-relaxed">
             Conveniently located in Pittsburgh, we proudly care for families across the area.
             Whether you need a routine cleaning or advanced treatment, you are in experienced hands.
           </p>
-          <ul class="about-points">
-            <li>State-of-the-art equipment and techniques</li>
-            <li>Welcoming environment for all ages</li>
-            <li>Flexible scheduling to fit your life</li>
-            <li>Most insurance plans accepted
+          <ul class="mt-8 grid sm:grid-cols-2 gap-4">
+            <li class="flex items-start gap-3 rounded-2xl bg-ice/60 px-4 py-4">
+              <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-primary"></span>
+              <span class="text-sm font-medium text-navy">State-of-the-art equipment and techniques</span>
+            </li>
+            <li class="flex items-start gap-3 rounded-2xl bg-ice/60 px-4 py-4">
+              <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-primary"></span>
+              <span class="text-sm font-medium text-navy">Welcoming environment for all ages</span>
+            </li>
+            <li class="flex items-start gap-3 rounded-2xl bg-ice/60 px-4 py-4">
+              <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-primary"></span>
+              <span class="text-sm font-medium text-navy">Flexible scheduling to fit your life</span>
+            </li>
+            <li class="flex items-start gap-3 rounded-2xl bg-ice/60 px-4 py-4">
+              <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-primary"></span>
+              <span class="text-sm font-medium text-navy">Most insurance plans accepted</span>
+            </li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="panel panel--light" id="services" aria-label="Services">
-      <div class="services-head">
-        <p class="services-kicker">Full-Service Care</p>
-        <h2>Dental Services For The Whole Family</h2>
-        <p>
-          Comprehensive care tailored to every stage of life, from preventive checkups to advanced restorative and surgical procedures.
-        </p>
-      </div>
-      <div class="services-grid">
-        <a class="service-tile" href="services/checkup-and-cleaning.html">
-          <h3>Checkup &amp; Cleaning</h3>
-          <p>Routine exams and cleanings to protect long-term oral health.</p>
-          <span>View details</span>
-        </a>
-        <a class="service-tile" href="services/cosmetic-dentistry.html">
-          <h3>Cosmetic Dentistry</h3>
-          <p>Whitening, veneers, and smile enhancements with natural results.</p>
-          <span>View details</span>
-        </a>
-        <a class="service-tile" href="services/restorative-dentistry.html">
-          <h3>Restorative Dentistry</h3>
-          <p>Crowns, bridges, and fillings to restore strength and function.</p>
-          <span>View details</span>
-        </a>
-        <a class="service-tile" href="services/dental-implants.html">
-          <h3>Dental Implants</h3>
-          <p>Durable replacement teeth designed for confidence and comfort.</p>
-          <span>View details</span>
-        </a>
-        <a class="service-tile" href="services/oral-surgery.html">
-          <h3>Oral Surgery</h3>
-          <p>Precision care for extractions and other surgical needs.</p>
-          <span>View details</span>
-        </a>
-        <a class="service-tile" href="services/dentures.html">
-          <h3>Dentures</h3>
-          <p>Custom-fit dentures that support everyday speech and eating.</p>
-          <span>View details</span>
-        </a>
-        <a class="service-tile" href="services/pediatric-dentistry.html">
-          <h3>Pediatric Dentistry</h3>
-          <p>Gentle, supportive dental visits for children and teens.</p>
-          <span>View details</span>
-        </a>
-        <a class="service-tile" href="services/sleep-apnea.html">
-          <h3>Sleep Apnea Care</h3>
-          <p>Custom oral appliance therapy to improve sleep and wellness.</p>
-          <span>View details</span>
-        </a>
+    <section class="py-24 sm:py-32 bg-gradient-to-b from-white to-ice/50" id="services" aria-label="Services">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto text-center">
+          <p class="font-heading text-sm font-bold tracking-wide text-primary uppercase">Full-Service Care</p>
+          <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold text-navy">Dental Services For The Whole Family</h2>
+          <p class="mt-4 text-slate">
+            Comprehensive care tailored to every stage of life, from preventive checkups to advanced restorative and surgical procedures.
+          </p>
+        </div>
+
+        <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/checkup-and-cleaning.html">
+            <h3 class="font-heading font-bold text-navy">Checkup &amp; Cleaning</h3>
+            <p class="mt-2 text-sm text-slate">Routine exams and cleanings to protect long-term oral health.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
+          </a>
+          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/cosmetic-dentistry.html">
+            <h3 class="font-heading font-bold text-navy">Cosmetic Dentistry</h3>
+            <p class="mt-2 text-sm text-slate">Whitening, veneers, and smile enhancements with natural results.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
+          </a>
+          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/restorative-dentistry.html">
+            <h3 class="font-heading font-bold text-navy">Restorative Dentistry</h3>
+            <p class="mt-2 text-sm text-slate">Crowns, bridges, and fillings to restore strength and function.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
+          </a>
+          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/dental-implants.html">
+            <h3 class="font-heading font-bold text-navy">Dental Implants</h3>
+            <p class="mt-2 text-sm text-slate">Durable replacement teeth designed for confidence and comfort.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
+          </a>
+          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/oral-surgery.html">
+            <h3 class="font-heading font-bold text-navy">Oral Surgery</h3>
+            <p class="mt-2 text-sm text-slate">Precision care for extractions and other surgical needs.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
+          </a>
+          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/dentures.html">
+            <h3 class="font-heading font-bold text-navy">Dentures</h3>
+            <p class="mt-2 text-sm text-slate">Custom-fit dentures that support everyday speech and eating.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
+          </a>
+          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/pediatric-dentistry.html">
+            <h3 class="font-heading font-bold text-navy">Pediatric Dentistry</h3>
+            <p class="mt-2 text-sm text-slate">Gentle, supportive dental visits for children and teens.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
+          </a>
+          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/sleep-apnea.html">
+            <h3 class="font-heading font-bold text-navy">Sleep Apnea Care</h3>
+            <p class="mt-2 text-sm text-slate">Custom oral appliance therapy to improve sleep and wellness.</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="panel panel--aqua" id="doctor">
-      <div class="doctor-wrap">
+    <section class="py-24 sm:py-32 bg-navy" id="doctor">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <h2>Meet Our Team</h2>
-          <p>
+          <p class="font-heading text-sm font-bold tracking-wide text-primary uppercase">Our Team</p>
+          <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold text-white">Meet Our Team</h2>
+          <p class="mt-6 text-white/70 leading-relaxed">
             Our doctors are committed to personalized care, modern treatment planning, and a genuinely comfortable patient experience. From preventive visits to advanced procedures, every recommendation is tailored to your needs and goals.
           </p>
-          <p>
+          <p class="mt-4 text-white/70 leading-relaxed">
             The team continues to stay current through ongoing education and evidence-based dentistry, with expertise in restorative care, cosmetic treatments, implants, and family-focused oral health.
           </p>
-          <a class="btn btn--team" href="doctors.html">Meet The Doctors</a>
+          <a class="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-white font-semibold shadow-xl shadow-primary/30 hover:-translate-y-0.5 transition" href="doctors.html">Meet The Doctors</a>
         </div>
         <img
-          class="doctor-photo"
+          class="rounded-3xl shadow-2xl w-full max-w-md mx-auto object-cover h-[380px]"
           src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=500&q=80"
           alt="Portrait of Dr. Meer Ahmed"
           loading="lazy"
@@ -198,109 +271,114 @@
       </div>
     </section>
 
-    <section class="panel panel--reviews" id="reviews" aria-label="Patient reviews">
-      <div class="reviews-head">
-        <p class="reviews-kicker">Patient Stories</p>
-        <h2>What Our Patients Say</h2>
-        <p>Real feedback from families who trust Brookline Family Dentistry with their smiles.</p>
-      </div>
+    <section class="py-24 sm:py-32 bg-white" id="reviews" aria-label="Patient reviews">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto text-center">
+          <p class="font-heading text-sm font-bold tracking-wide text-primary uppercase">Patient Stories</p>
+          <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold text-navy">What Our Patients Say</h2>
+          <p class="mt-4 text-slate">Real feedback from families who trust Brookline Family Dentistry with their smiles.</p>
+        </div>
 
-      <div class="reviews-shell" data-slider="testimonials">
-        <aside class="reviews-score" aria-label="Overall rating">
-          <p class="reviews-score__label">Average Rating</p>
-          <p class="reviews-score__value">4.9</p>
-          <p class="reviews-score__stars" aria-hidden="true">★★★★★</p>
-          <p class="reviews-score__sub">Across routine, cosmetic, and restorative visits</p>
-        </aside>
+        <div class="mt-16 grid md:grid-cols-[220px_1fr] gap-6 items-stretch" data-slider="testimonials">
+          <aside class="rounded-3xl bg-ice/60 p-8 flex flex-col items-center justify-center text-center shadow-lg shadow-navy/5" aria-label="Overall rating">
+            <p class="text-sm font-semibold text-slate">Average Rating</p>
+            <p class="font-heading text-5xl font-extrabold text-navy mt-2">4.9</p>
+            <p class="text-primary text-lg mt-2" aria-hidden="true">★★★★★</p>
+            <p class="mt-3 text-xs text-slate">Across routine, cosmetic, and restorative visits</p>
+          </aside>
 
-        <article class="testimonial" id="testimonial-card">
-          <p class="testimonial-mark" aria-hidden="true">“</p>
-          <p class="testimonial-stars" id="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</p>
-          <h3 id="testimonial-title">The Team Is Amazing</h3>
-          <p id="testimonial-text" aria-live="polite">
-            I highly recommend Dr. Jinna and the team. Everyone is professional, kind, and truly makes you feel like family.
-          </p>
+          <article class="relative rounded-3xl bg-white p-8 sm:p-10 shadow-xl shadow-navy/10" id="testimonial-card">
+            <p class="absolute top-4 right-8 font-heading text-6xl text-primary/20" aria-hidden="true">&ldquo;</p>
+            <p class="text-primary" id="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</p>
+            <h3 class="mt-3 font-heading text-xl font-bold text-navy" id="testimonial-title">The Team Is Amazing</h3>
+            <p class="mt-3 text-slate leading-relaxed" id="testimonial-text" aria-live="polite">
+              I highly recommend Dr. Jinna and the team. Everyone is professional, kind, and truly makes you feel like family.
+            </p>
 
-          <div class="testimonial-meta">
-            <div class="testimonial-avatar" id="testimonial-avatar">JM</div>
-            <div>
-              <p class="testimonial-name" id="testimonial-name">John M.</p>
-              <p class="testimonial-service" id="testimonial-service">Cleaning Visit</p>
+            <div class="mt-6 flex items-center gap-4">
+              <div class="h-11 w-11 rounded-full bg-navy text-white font-heading font-bold flex items-center justify-center" id="testimonial-avatar">JM</div>
+              <div>
+                <p class="font-semibold text-navy" id="testimonial-name">John M.</p>
+                <p class="text-sm text-slate" id="testimonial-service">Cleaning Visit</p>
+              </div>
+              <p class="ml-auto text-sm text-slate" id="testimonial-source">Google Review</p>
             </div>
-            <p class="testimonial-source" id="testimonial-source">Google Review</p>
-          </div>
 
-          <div class="testimonial-progress">
-            <span id="testimonial-progress"></span>
-          </div>
-          <p class="testimonial-rating" id="testimonial-rating">4.9/5 Rating</p>
-        </article>
-      </div>
+            <div class="mt-6 h-1.5 w-full rounded-full bg-ice overflow-hidden">
+              <span class="block h-full rounded-full bg-primary" id="testimonial-progress"></span>
+            </div>
+            <p class="mt-2 text-xs font-medium text-slate" id="testimonial-rating">4.9/5 Rating</p>
+          </article>
+        </div>
 
-      <div class="reviews-controls" aria-label="Review controls">
-        <button class="slider-btn reviews-btn" type="button" data-action="prev" aria-label="Previous testimonial">&lt;</button>
-        <div class="reviews-dots" id="reviews-dots"></div>
-        <button class="slider-btn reviews-btn" type="button" data-action="next" aria-label="Next testimonial">&gt;</button>
+        <div class="mt-8 flex items-center justify-center gap-4" aria-label="Review controls">
+          <button class="h-10 w-10 rounded-full bg-ice text-navy font-bold hover:bg-primary hover:text-white transition" type="button" data-action="prev" aria-label="Previous testimonial">&lt;</button>
+          <div class="flex items-center gap-2" id="reviews-dots"></div>
+          <button class="h-10 w-10 rounded-full bg-ice text-navy font-bold hover:bg-primary hover:text-white transition" type="button" data-action="next" aria-label="Next testimonial">&gt;</button>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="contact" id="contact">
-    <div class="contact-layout">
-      <div class="contact-map-wrap">
+  <footer class="bg-ice/60" id="contact">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 grid lg:grid-cols-2 gap-10 items-stretch">
+      <div class="rounded-3xl overflow-hidden shadow-xl shadow-navy/10 min-h-[320px]">
         <iframe
+          class="h-full w-full min-h-[320px]"
           title="Brookline Dentistry map"
           src="https://www.google.com/maps?q=1256+Brookline+Blvd+Pittsburgh+PA+15226&output=embed"
           loading="lazy"
         ></iframe>
       </div>
 
-      <div class="contact-card">
-        <p class="contact-kicker">Visit Our Office</p>
-        <h2>Your Neighborhood Dental Home In Brookline</h2>
+      <div class="rounded-3xl bg-white p-8 sm:p-10 shadow-xl shadow-navy/10">
+        <p class="font-heading text-sm font-bold tracking-wide text-primary uppercase">Visit Our Office</p>
+        <h2 class="mt-3 font-heading text-2xl sm:text-3xl font-extrabold text-navy">Your Neighborhood Dental Home In Brookline</h2>
 
-        <div class="contact-info-block">
-          <div class="contact-icon" aria-hidden="true">A</div>
+        <div class="mt-8 flex items-start gap-4">
+          <div class="h-10 w-10 shrink-0 rounded-full bg-ice flex items-center justify-center font-heading font-bold text-primary" aria-hidden="true">A</div>
           <div>
-            <p class="contact-label">Address</p>
-            <p>Brookline Family Dentistry</p>
-            <p>1256 Brookline Blvd</p>
-            <p>Pittsburgh, PA 15226, USA</p>
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate">Address</p>
+            <p class="font-medium text-navy mt-1">Brookline Family Dentistry</p>
+            <p class="text-slate">1256 Brookline Blvd</p>
+            <p class="text-slate">Pittsburgh, PA 15226, USA</p>
           </div>
         </div>
 
-        <div class="contact-info-block">
-          <div class="contact-icon" aria-hidden="true">H</div>
+        <div class="mt-6 flex items-start gap-4">
+          <div class="h-10 w-10 shrink-0 rounded-full bg-ice flex items-center justify-center font-heading font-bold text-primary" aria-hidden="true">H</div>
           <div>
-            <p class="contact-label">Hours</p>
-            <p>Monday: 8:00am - 4:00pm</p>
-            <p>Tuesday: 8:00am - 8:00pm</p>
-            <p>Wednesday: 10:00am - 4:00pm</p>
-            <p>Thursday: 10:00am - 8:00pm</p>
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate">Hours</p>
+            <p class="text-slate mt-1">Monday: 8:00am - 4:00pm</p>
+            <p class="text-slate">Tuesday: 8:00am - 8:00pm</p>
+            <p class="text-slate">Wednesday: 10:00am - 4:00pm</p>
+            <p class="text-slate">Thursday: 10:00am - 8:00pm</p>
           </div>
         </div>
 
-        <div class="contact-info-block">
-          <div class="contact-icon" aria-hidden="true">P</div>
+        <div class="mt-6 flex items-start gap-4">
+          <div class="h-10 w-10 shrink-0 rounded-full bg-ice flex items-center justify-center font-heading font-bold text-primary" aria-hidden="true">P</div>
           <div>
-            <p class="contact-label">Phone</p>
-            <p><a href="tel:+14125313155">(412) 531-3155</a></p>
+            <p class="text-xs font-semibold uppercase tracking-wide text-slate">Phone</p>
+            <p class="mt-1"><a class="font-medium text-navy hover:text-primary transition" href="tel:+14125313155">(412) 531-3155</a></p>
           </div>
         </div>
 
-        <a class="btn btn--contact" href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf" target="_blank" rel="noopener noreferrer">Schedule Appointment</a>
+        <a class="mt-8 inline-flex items-center justify-center w-full sm:w-auto rounded-full bg-primary px-8 py-4 text-white font-semibold shadow-xl shadow-primary/30 hover:-translate-y-0.5 transition" href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf" target="_blank" rel="noopener noreferrer">Schedule Appointment</a>
       </div>
     </div>
   </footer>
 
-  <div class="site-footer" role="contentinfo">
-    <p>Brookline Family Dentistry <span id="year"></span>. All rights reserved.</p>
-    <nav class="site-footer__links" aria-label="Footer links">
-      <a href="#about">About</a>
-      <a href="#services">Treatments</a>
-      <a href="#doctor">Doctors</a>
-      <a href="https://www.brooklinepadentist.com/contact-us-6.html" target="_blank" rel="noopener noreferrer">Contact Form</a>
-    </nav>
+  <div class="bg-navy text-white/70 py-8" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+      <p>Brookline Family Dentistry <span id="year"></span>. All rights reserved.</p>
+      <nav class="flex items-center gap-6" aria-label="Footer links">
+        <a class="hover:text-primary transition" href="#about">About</a>
+        <a class="hover:text-primary transition" href="#services">Treatments</a>
+        <a class="hover:text-primary transition" href="#doctor">Doctors</a>
+        <a class="hover:text-primary transition" href="https://www.brooklinepadentist.com/contact-us-6.html" target="_blank" rel="noopener noreferrer">Contact Form</a>
+      </nav>
+    </div>
   </div>
 
   <script src="script.js"></script>
