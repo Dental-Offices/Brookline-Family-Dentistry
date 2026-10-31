@@ -730,6 +730,7 @@ main {
   border-radius: 18px;
   min-height: 300px;
   object-fit: cover;
+  object-position: top center;
 }
 
 .panel--reviews {
@@ -1459,7 +1460,7 @@ body.service-page main {
   color: #f7fbfc;
   background:
     linear-gradient(120deg, rgba(16, 27, 34, 0.72), rgba(16, 27, 34, 0.28)),
-    var(--service-hero-image) center/cover no-repeat;
+    var(--service-hero-image) var(--service-hero-position, center 20%)/cover no-repeat;
 }
 
 .service-hero::before {
