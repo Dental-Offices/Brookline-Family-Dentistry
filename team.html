@@ -15,10 +15,10 @@
       theme: {
         extend: {
           colors: {
-            primary: '#2eafc2',
-            navy: '#101b22',
-            ice: '#d8ecf0',
-            slate: '#625e59',
+            primary: '#2878b8',
+            navy: '#102b46',
+            ice: '#e8f2f9',
+            slate: '#5b7185',
           },
           fontFamily: {
             heading: ['"Playfair Display"', 'Georgia', 'serif'],
@@ -39,10 +39,10 @@
         display: none;
         flex-direction: column;
         gap: 0.25rem;
-        background: #101b22;
+        background: #102b46;
         border-radius: 1.5rem;
         padding: 1rem 1.25rem;
-        box-shadow: 0 24px 48px rgba(16, 27, 34, 0.45);
+        box-shadow: 0 24px 48px rgba(16, 43, 70, 0.32);
         z-index: 40;
       }
       #main-nav.open { display: flex; }
@@ -56,26 +56,26 @@
     ------------------------------------------------ */
     .team-intro {
       background:
-        radial-gradient(circle at 50% 0%, rgba(46, 175, 194, 0.16) 0%, transparent 60%),
-        linear-gradient(180deg, #f2f9fb 0%, #e5f3f7 100%);
+        radial-gradient(circle at 50% 0%, rgba(74, 155, 208, 0.14) 0%, transparent 60%),
+        linear-gradient(180deg, #f2f8fc 0%, #e8f2f9 100%);
       padding: clamp(28px, 4vw, 48px) 0;
       text-align: center;
-      border-bottom: 1px solid #cfe6ea;
+      border-bottom: 1px solid #d6e5f0;
     }
 
     .team-intro p {
       max-width: 720px;
       margin: 0 auto;
       font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-      color: #625e59;
+      color: #5b7185;
       line-height: 1.75;
     }
 
     .team-section {
       background:
-        radial-gradient(circle at 15% 15%, rgba(46, 175, 194, 0.1) 0%, transparent 45%),
-        radial-gradient(circle at 85% 85%, rgba(36, 139, 134, 0.08) 0%, transparent 45%),
-        linear-gradient(180deg, #ffffff 0%, #f4fbfd 50%, #ffffff 100%);
+        radial-gradient(circle at 15% 15%, rgba(74, 155, 208, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(40, 120, 184, 0.06) 0%, transparent 45%),
+        linear-gradient(180deg, #ffffff 0%, #f4f9fd 50%, #ffffff 100%);
       padding: clamp(48px, 7vw, 96px) 0;
     }
 
@@ -90,14 +90,14 @@
       border: 1px solid var(--line);
       border-radius: var(--radius-xl);
       overflow: hidden;
-      box-shadow: 0 18px 36px rgba(16, 27, 34, 0.1);
+      box-shadow: 0 18px 36px rgba(16, 43, 70, 0.1);
       text-align: center;
       transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
 
     .team-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 24px 44px rgba(16, 27, 34, 0.16);
+      box-shadow: 0 24px 44px rgba(16, 43, 70, 0.15);
     }
 
     .team-card__photo {

@@ -15,10 +15,10 @@
       theme: {
         extend: {
           colors: {
-            primary: '#2eafc2',
-            navy: '#101b22',
-            ice: '#d8ecf0',
-            slate: '#625e59',
+            primary: '#2878b8',
+            navy: '#102b46',
+            ice: '#e8f2f9',
+            slate: '#5b7185',
           },
           fontFamily: {
             heading: ['"Playfair Display"', 'Georgia', 'serif'],
@@ -39,10 +39,10 @@
         display: none;
         flex-direction: column;
         gap: 0.25rem;
-        background: #101b22;
+        background: #102b46;
         border-radius: 1.5rem;
         padding: 1rem 1.25rem;
-        box-shadow: 0 24px 48px rgba(16, 27, 34, 0.45);
+        box-shadow: 0 24px 48px rgba(16, 43, 70, 0.32);
         z-index: 40;
       }
       #main-nav.open { display: flex; }
@@ -57,34 +57,34 @@
 
     .doctors-intro {
       background:
-        radial-gradient(circle at 50% 0%, rgba(46, 175, 194, 0.16) 0%, transparent 60%),
-        linear-gradient(180deg, #f2f9fb 0%, #e5f3f7 100%);
+        radial-gradient(circle at 50% 0%, rgba(74, 155, 208, 0.14) 0%, transparent 60%),
+        linear-gradient(180deg, #f2f8fc 0%, #e8f2f9 100%);
       padding: clamp(28px, 4vw, 48px) 0;
       text-align: center;
-      border-bottom: 1px solid #cfe6ea;
+      border-bottom: 1px solid #d6e5f0;
     }
 
     .doctors-intro p {
       max-width: 720px;
       margin: 0 auto;
       font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-      color: #625e59;
+      color: #5b7185;
       line-height: 1.75;
     }
 
     /* Doctor section alternating backgrounds */
     .doctors-section {
       background:
-        radial-gradient(circle at 10% 20%, rgba(46, 175, 194, 0.08) 0%, transparent 45%),
-        linear-gradient(180deg, #ffffff 0%, #f6fbfd 50%, #ffffff 100%);
+        radial-gradient(circle at 10% 20%, rgba(74, 155, 208, 0.08) 0%, transparent 45%),
+        linear-gradient(180deg, #ffffff 0%, #f5faff 50%, #ffffff 100%);
       padding: clamp(48px, 7vw, 96px) 0;
     }
 
     .doctors-section--light {
       background:
-        radial-gradient(circle at 90% 20%, rgba(36, 139, 134, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 10% 80%, rgba(46, 175, 194, 0.08) 0%, transparent 40%),
-        linear-gradient(180deg, #eef7f9 0%, #e3f2f6 50%, #eef7fa 100%);
+        radial-gradient(circle at 90% 20%, rgba(40, 120, 184, 0.1) 0%, transparent 45%),
+        radial-gradient(circle at 10% 80%, rgba(74, 155, 208, 0.08) 0%, transparent 40%),
+        linear-gradient(180deg, #eef6fb 0%, #e5f0f8 50%, #eef6fb 100%);
     }
 
     /* Two-column profile layout */
@@ -114,7 +114,7 @@
       object-fit: cover;
       object-position: top center;
       aspect-ratio: 4 / 5;
-      box-shadow: 0 32px 60px rgba(9, 32, 45, 0.24);
+      box-shadow: 0 32px 60px rgba(16, 43, 70, 0.2);
       display: block;
     }
 
@@ -122,7 +122,7 @@
       position: absolute;
       bottom: -18px;
       left: 22px;
-      background: linear-gradient(135deg, #16232c, #101b22);
+      background: linear-gradient(135deg, #1a4163, #102b46);
       color: #eaf7ff;
       border-radius: 18px;
       padding: 14px 22px;
@@ -153,7 +153,7 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
       font-weight: 800;
-      color: #2eafc2;
+      color: #2878b8;
       margin-bottom: 10px;
     }
 
@@ -161,13 +161,13 @@
       font-family: var(--font-display);
       font-size: clamp(2rem, 4vw, 3rem);
       line-height: 1.05;
-      color: #101b22;
+      color: #15324d;
       margin-bottom: 4px;
     }
 
     .doctor-title {
       font-size: 1.05rem;
-      color: #625e59;
+      color: #5b7185;
       font-weight: 700;
       margin-bottom: 22px;
     }
@@ -175,7 +175,7 @@
     .doctor-bio p {
       font-size: 1.07rem;
       line-height: 1.8;
-      color: #625e59;
+      color: #5b7185;
       margin-bottom: 14px;
     }
 
@@ -186,7 +186,7 @@
       flex-direction: column;
       gap: 18px;
       padding-top: 24px;
-      border-top: 1px solid #cfe6ea;
+      border-top: 1px solid #d6e5f0;
     }
 
     .credential-group-label {
@@ -194,7 +194,7 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       font-weight: 800;
-      color: #2eafc2;
+      color: #2878b8;
       margin-bottom: 8px;
     }
 
@@ -205,9 +205,9 @@
     }
 
     .credential-chip {
-      background: rgba(46, 175, 194, 0.1);
-      border: 1px solid rgba(46, 175, 194, 0.4);
-      color: #101b22;
+      background: rgba(40, 120, 184, 0.1);
+      border: 1px solid rgba(40, 120, 184, 0.3);
+      color: #15324d;
       border-radius: 999px;
       padding: 6px 14px;
       font-size: 0.9rem;
