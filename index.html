@@ -10,21 +10,22 @@
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: '#2eafc2',
+            primary: '#248b86',
             navy: '#101b22',
-            ice: '#d8ecf0',
+            ice: '#eef6f8',
             slate: '#625e59',
           },
           fontFamily: {
-            heading: ['Montserrat', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
+            heading: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            body: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
           },
         },
       },
@@ -32,8 +33,53 @@
   </script>
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
-    h1, h2, h3, h4, .font-heading { font-family: 'Montserrat', sans-serif; }
+    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    h1, h2, h3, h4, .font-heading { font-family: 'Playfair Display', Georgia, serif; }
+
+    .hero-luxury-bg {
+      background:
+        radial-gradient(circle at 85% 15%, rgba(46, 175, 194, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 10% 45%, rgba(36, 139, 134, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(186, 230, 243, 0.3) 0%, transparent 55%),
+        linear-gradient(135deg, #f0f9fb 0%, #e6f4f8 40%, #ffffff 80%, #f4fbfe 100%);
+    }
+
+    .about-luxury-bg {
+      background:
+        radial-gradient(ellipse at 12% 20%, rgba(46, 175, 194, 0.12) 0%, transparent 45%),
+        radial-gradient(ellipse at 88% 70%, rgba(36, 139, 134, 0.10) 0%, transparent 45%),
+        linear-gradient(180deg, #ffffff 0%, #f6fbfd 50%, #ffffff 100%);
+    }
+
+    .services-luxury-bg {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(46, 175, 194, 0.18) 0%, transparent 55%),
+        radial-gradient(circle at 90% 85%, rgba(36, 139, 134, 0.14) 0%, transparent 50%),
+        radial-gradient(circle at 10% 90%, rgba(114, 215, 230, 0.16) 0%, transparent 50%),
+        linear-gradient(180deg, #ffffff 0%, #edf7fa 45%, #e3f2f6 100%);
+    }
+
+    .team-luxury-bg {
+      background:
+        radial-gradient(circle at 18% 25%, rgba(46, 175, 194, 0.32) 0%, transparent 45%),
+        radial-gradient(circle at 82% 75%, rgba(36, 139, 134, 0.28) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(14, 60, 78, 0.35) 0%, transparent 60%),
+        linear-gradient(135deg, #071217 0%, #0e222c 50%, #09161d 100%);
+    }
+
+    .reviews-luxury-bg {
+      background:
+        radial-gradient(circle at 50% 15%, rgba(46, 175, 194, 0.12) 0%, transparent 55%),
+        radial-gradient(circle at 10% 80%, rgba(36, 139, 134, 0.08) 0%, transparent 45%),
+        linear-gradient(180deg, #ffffff 0%, #f3fafc 50%, #ffffff 100%);
+    }
+
+    .footer-luxury-bg {
+      background:
+        radial-gradient(circle at 12% 40%, rgba(46, 175, 194, 0.16) 0%, transparent 50%),
+        radial-gradient(circle at 88% 20%, rgba(36, 139, 134, 0.14) 0%, transparent 45%),
+        linear-gradient(135deg, #eaf5f8 0%, #def0f4 50%, #eaf4f7 100%);
+    }
 
     @media (max-width: 1023px) {
       #main-nav {
@@ -84,33 +130,34 @@
   </header>
 
   <main id="main-content">
-    <section class="relative overflow-hidden bg-gradient-to-b from-ice via-ice/60 to-white pt-16 pb-28 sm:pt-20 sm:pb-36" id="home">
-      <div class="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-primary/20 blur-3xl" aria-hidden="true"></div>
-      <div class="pointer-events-none absolute top-1/2 -left-32 h-80 w-80 rounded-full bg-primary/10 blur-3xl" aria-hidden="true"></div>
+    <section class="hero-luxury-bg relative overflow-hidden pt-16 pb-28 sm:pt-20 sm:pb-36" id="home">
+      <div class="pointer-events-none absolute -top-24 -right-24 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-cyan-300/30 via-primary/25 to-transparent blur-3xl" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute top-1/2 -left-32 h-96 w-96 rounded-full bg-gradient-to-tr from-primary/20 via-teal-200/25 to-transparent blur-3xl" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-gradient-to-t from-cyan-100/40 to-transparent blur-2xl" aria-hidden="true"></div>
 
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <p class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">Brookline <span class="text-primary">Family Dentistry</span></p>
-          <h1 class="mt-4 font-heading text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-[1.08] text-navy">Your Dream Smile Is Our Goal</h1>
-          <p class="mt-6 max-w-xl text-lg text-slate">
+          <p class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy">Brookline <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-teal-600 to-cyan-600">Family Dentistry</span></p>
+          <h1 class="mt-4 font-heading text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-[1.12] text-navy">Your Dream Smile Is Our Goal</h1>
+          <p class="mt-6 max-w-xl text-lg text-slate leading-relaxed">
             We provide routine exams, cleanings, fillings, whitening, and advanced options like implants, crowns, and restorative dentistry.
           </p>
 
           <div class="mt-8 flex flex-wrap gap-4">
-            <a class="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-white font-semibold shadow-xl shadow-primary/30 hover:-translate-y-0.5 transition" href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf" target="_blank" rel="noopener noreferrer">Request Appointment</a>
-            <a class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-navy font-semibold border-2 border-navy/10 hover:border-navy/30 transition" href="#services">Explore Services</a>
+            <a class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#1c7873] via-[#248b86] to-[#2eafc2] hover:from-[#166460] hover:to-[#269cb0] px-8 py-4 text-white font-semibold shadow-xl shadow-primary/30 hover:-translate-y-0.5 transition" href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf" target="_blank" rel="noopener noreferrer">Request Appointment</a>
+            <a class="inline-flex items-center justify-center rounded-full bg-white/90 backdrop-blur px-8 py-4 text-navy font-semibold border-2 border-navy/10 hover:border-navy/30 transition shadow-sm" href="#services">Explore Services</a>
           </div>
 
           <div class="mt-12 flex flex-wrap gap-4" aria-label="Practice highlights">
-            <div class="flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-lg shadow-navy/5">
+            <div class="flex items-center gap-3 rounded-2xl bg-white/90 backdrop-blur-md border border-white px-5 py-4 shadow-lg shadow-navy/5">
               <span class="font-heading text-xl font-extrabold text-primary">15+</span>
               <span class="text-sm font-medium text-slate leading-tight">Years of<br />Care</span>
             </div>
-            <div class="flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-lg shadow-navy/5">
+            <div class="flex items-center gap-3 rounded-2xl bg-white/90 backdrop-blur-md border border-white px-5 py-4 shadow-lg shadow-navy/5">
               <span class="font-heading text-xl font-extrabold text-primary">8+</span>
               <span class="text-sm font-medium text-slate leading-tight">Core<br />Treatments</span>
             </div>
-            <div class="flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-lg shadow-navy/5">
+            <div class="flex items-center gap-3 rounded-2xl bg-white/90 backdrop-blur-md border border-white px-5 py-4 shadow-lg shadow-navy/5">
               <span class="font-heading text-xl font-extrabold text-primary">5-Star</span>
               <span class="text-sm font-medium text-slate leading-tight">Patient<br />Experience</span>
             </div>
@@ -118,7 +165,7 @@
         </div>
 
         <div class="relative mt-8 lg:mt-0">
-          <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-navy/20">
+          <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-navy/20 border-4 border-white/60">
             <img
               class="h-[380px] sm:h-[460px] lg:h-[520px] w-full object-cover"
               src="images/UGAD5184.jpg"
@@ -127,12 +174,12 @@
             />
           </div>
 
-          <div class="absolute -top-6 left-4 sm:-left-8 flex items-center gap-3 rounded-2xl bg-white px-5 py-3.5 shadow-xl shadow-navy/10">
-            <span class="h-2.5 w-2.5 rounded-full bg-primary"></span>
+          <div class="absolute -top-6 left-4 sm:-left-8 flex items-center gap-3 rounded-2xl bg-white/95 backdrop-blur px-5 py-3.5 shadow-xl shadow-navy/10 border border-white">
+            <span class="h-2.5 w-2.5 rounded-full bg-primary shadow-sm shadow-primary"></span>
             <span class="font-heading text-sm font-bold text-navy">New Patients Welcome</span>
           </div>
 
-          <div class="absolute -bottom-6 right-4 sm:-right-8 rounded-2xl bg-navy px-5 py-4 shadow-xl shadow-navy/30 text-white">
+          <div class="absolute -bottom-6 right-4 sm:-right-8 rounded-2xl bg-gradient-to-br from-navy via-[#162a35] to-[#101b22] px-5 py-4 shadow-xl shadow-navy/30 text-white border border-white/10">
             <p class="font-heading text-sm font-bold">Open Today</p>
             <p class="text-xs text-white/70 mt-0.5">Call (412) 531-3155</p>
           </div>
@@ -140,23 +187,23 @@
       </div>
     </section>
 
-    <section class="py-24 sm:py-32 bg-white" id="about">
+    <section class="about-luxury-bg relative py-24 sm:py-32 overflow-hidden" id="about">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
         <div class="relative">
           <img
-            class="w-full h-[340px] sm:h-[440px] object-cover rounded-3xl shadow-2xl shadow-navy/10"
+            class="w-full h-[340px] sm:h-[440px] object-cover rounded-3xl shadow-2xl shadow-navy/10 border-4 border-white/80"
             src="./images/dentalTools.JPG"
             alt="Modern dental chair and tools"
             loading="lazy"
           />
-          <div class="absolute -top-6 -left-4 sm:-left-8 rounded-2xl bg-white px-5 py-4 shadow-xl shadow-navy/10">
+          <div class="absolute -top-6 -left-4 sm:-left-8 rounded-2xl bg-white/95 backdrop-blur px-5 py-4 shadow-xl shadow-navy/10 border border-white">
             <p class="font-heading text-2xl font-extrabold text-primary">15+</p>
-            <p class="text-xs font-medium text-slate">Years of Care</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-slate">Years of Care</p>
           </div>
         </div>
 
         <div>
-          <p class="font-heading text-base font-extrabold tracking-wider text-primary uppercase">About Us</p>
+          <p class="font-sans text-xs uppercase tracking-[0.2em] font-extrabold text-primary">About Us</p>
           <h2 class="mt-3 font-heading text-4xl sm:text-5xl font-black text-navy leading-tight">Where Experience, Skill &amp; Compassion Come Together</h2>
           <p class="mt-6 text-lg sm:text-xl font-semibold text-slate-800 leading-relaxed">
             At Brookline Family Dentistry, we believe every patient deserves personalized,
@@ -168,19 +215,19 @@
             Whether you need a routine cleaning or advanced treatment, you are in experienced hands.
           </p>
           <ul class="mt-8 grid sm:grid-cols-2 gap-4">
-            <li class="flex items-start gap-3 rounded-2xl bg-ice/60 px-5 py-4">
+            <li class="flex items-start gap-3 rounded-2xl bg-gradient-to-br from-ice/70 to-white/90 border border-primary/15 px-5 py-4 shadow-sm hover:border-primary/30 transition">
               <span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-primary"></span>
               <span class="text-base font-bold text-navy">State-of-the-art equipment and techniques</span>
             </li>
-            <li class="flex items-start gap-3 rounded-2xl bg-ice/60 px-5 py-4">
+            <li class="flex items-start gap-3 rounded-2xl bg-gradient-to-br from-ice/70 to-white/90 border border-primary/15 px-5 py-4 shadow-sm hover:border-primary/30 transition">
               <span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-primary"></span>
               <span class="text-base font-bold text-navy">Welcoming environment for all ages</span>
             </li>
-            <li class="flex items-start gap-3 rounded-2xl bg-ice/60 px-5 py-4">
+            <li class="flex items-start gap-3 rounded-2xl bg-gradient-to-br from-ice/70 to-white/90 border border-primary/15 px-5 py-4 shadow-sm hover:border-primary/30 transition">
               <span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-primary"></span>
               <span class="text-base font-bold text-navy">Flexible scheduling to fit your life</span>
             </li>
-            <li class="flex items-start gap-3 rounded-2xl bg-ice/60 px-5 py-4">
+            <li class="flex items-start gap-3 rounded-2xl bg-gradient-to-br from-ice/70 to-white/90 border border-primary/15 px-5 py-4 shadow-sm hover:border-primary/30 transition">
               <span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-primary"></span>
               <span class="text-base font-bold text-navy">Most insurance plans accepted</span>
             </li>
@@ -189,54 +236,54 @@
       </div>
     </section>
 
-    <section class="py-24 sm:py-32 bg-gradient-to-b from-white to-ice/50" id="services" aria-label="Services">
+    <section class="services-luxury-bg relative py-24 sm:py-32 overflow-hidden" id="services" aria-label="Services">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-2xl mx-auto text-center">
-          <p class="font-heading text-sm font-bold tracking-wide text-primary uppercase">Full-Service Care</p>
-          <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold text-navy">Dental Services For The Whole Family</h2>
-          <p class="mt-4 text-slate">
+          <p class="font-sans text-xs uppercase tracking-[0.2em] font-extrabold text-primary">Full-Service Care</p>
+          <h2 class="mt-3 font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy">Dental Services For The Whole Family</h2>
+          <p class="mt-4 text-slate text-base sm:text-lg">
             Comprehensive care tailored to every stage of life, from preventive checkups to advanced restorative and surgical procedures.
           </p>
         </div>
 
         <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/checkup-and-cleaning.html">
-            <h3 class="font-heading font-bold text-navy">Checkup &amp; Cleaning</h3>
+          <a class="group rounded-2xl bg-white/95 backdrop-blur-sm p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-1 transition border border-line/60 hover:border-primary/40" href="services/checkup-and-cleaning.html">
+            <h3 class="font-heading font-bold text-navy text-lg">Checkup &amp; Cleaning</h3>
             <p class="mt-2 text-sm text-slate">Routine exams and cleanings to protect long-term oral health.</p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
           </a>
-          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/cosmetic-dentistry.html">
-            <h3 class="font-heading font-bold text-navy">Cosmetic Dentistry</h3>
+          <a class="group rounded-2xl bg-white/95 backdrop-blur-sm p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-1 transition border border-line/60 hover:border-primary/40" href="services/cosmetic-dentistry.html">
+            <h3 class="font-heading font-bold text-navy text-lg">Cosmetic Dentistry</h3>
             <p class="mt-2 text-sm text-slate">Whitening, veneers, and smile enhancements with natural results.</p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
           </a>
-          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/restorative-dentistry.html">
-            <h3 class="font-heading font-bold text-navy">Restorative Dentistry</h3>
+          <a class="group rounded-2xl bg-white/95 backdrop-blur-sm p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-1 transition border border-line/60 hover:border-primary/40" href="services/restorative-dentistry.html">
+            <h3 class="font-heading font-bold text-navy text-lg">Restorative Dentistry</h3>
             <p class="mt-2 text-sm text-slate">Crowns, bridges, and fillings to restore strength and function.</p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
           </a>
-          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/dental-implants.html">
-            <h3 class="font-heading font-bold text-navy">Dental Implants</h3>
+          <a class="group rounded-2xl bg-white/95 backdrop-blur-sm p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-1 transition border border-line/60 hover:border-primary/40" href="services/dental-implants.html">
+            <h3 class="font-heading font-bold text-navy text-lg">Dental Implants</h3>
             <p class="mt-2 text-sm text-slate">Durable replacement teeth designed for confidence and comfort.</p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
           </a>
-          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/oral-surgery.html">
-            <h3 class="font-heading font-bold text-navy">Oral Surgery</h3>
+          <a class="group rounded-2xl bg-white/95 backdrop-blur-sm p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-1 transition border border-line/60 hover:border-primary/40" href="services/oral-surgery.html">
+            <h3 class="font-heading font-bold text-navy text-lg">Oral Surgery</h3>
             <p class="mt-2 text-sm text-slate">Precision care for extractions and other surgical needs.</p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
           </a>
-          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/dentures.html">
-            <h3 class="font-heading font-bold text-navy">Dentures</h3>
+          <a class="group rounded-2xl bg-white/95 backdrop-blur-sm p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-1 transition border border-line/60 hover:border-primary/40" href="services/dentures.html">
+            <h3 class="font-heading font-bold text-navy text-lg">Dentures</h3>
             <p class="mt-2 text-sm text-slate">Custom-fit dentures that support everyday speech and eating.</p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
           </a>
-          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/pediatric-dentistry.html">
-            <h3 class="font-heading font-bold text-navy">Pediatric Dentistry</h3>
+          <a class="group rounded-2xl bg-white/95 backdrop-blur-sm p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-1 transition border border-line/60 hover:border-primary/40" href="services/pediatric-dentistry.html">
+            <h3 class="font-heading font-bold text-navy text-lg">Pediatric Dentistry</h3>
             <p class="mt-2 text-sm text-slate">Gentle, supportive dental visits for children and teens.</p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
           </a>
-          <a class="group rounded-2xl bg-white p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:-translate-y-1 transition" href="services/sleep-apnea.html">
-            <h3 class="font-heading font-bold text-navy">Sleep Apnea Care</h3>
+          <a class="group rounded-2xl bg-white/95 backdrop-blur-sm p-6 shadow-lg shadow-navy/5 hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-1 transition border border-line/60 hover:border-primary/40" href="services/sleep-apnea.html">
+            <h3 class="font-heading font-bold text-navy text-lg">Sleep Apnea Care</h3>
             <p class="mt-2 text-sm text-slate">Custom oral appliance therapy to improve sleep and wellness.</p>
             <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">View details <span class="transition group-hover:translate-x-1">&rarr;</span></span>
           </a>
@@ -244,24 +291,27 @@
       </div>
     </section>
 
-    <section class="py-24 sm:py-32 bg-navy" id="doctor">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+    <section class="team-luxury-bg relative py-24 sm:py-32 overflow-hidden" id="doctor">
+      <div class="pointer-events-none absolute -top-24 right-1/4 h-96 w-96 rounded-full bg-cyan-400/10 blur-3xl" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -bottom-24 left-1/4 h-96 w-96 rounded-full bg-primary/20 blur-3xl" aria-hidden="true"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <p class="font-heading text-sm font-bold tracking-wide text-primary uppercase">Our Team</p>
-          <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold text-white">Meet Our Team</h2>
-          <p class="mt-6 text-white/70 leading-relaxed">
+          <p class="font-sans text-xs uppercase tracking-[0.2em] font-extrabold text-cyan-300">Our Team</p>
+          <h2 class="mt-3 font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">Meet Our Team</h2>
+          <p class="mt-6 text-white/80 leading-relaxed text-base sm:text-lg">
             Our doctors are committed to personalized care, modern treatment planning, and a genuinely comfortable patient experience. From preventive visits to advanced procedures, every recommendation is tailored to your needs and goals.
           </p>
-          <p class="mt-4 text-white/70 leading-relaxed">
+          <p class="mt-4 text-white/80 leading-relaxed text-base sm:text-lg">
             The team continues to stay current through ongoing education and evidence-based dentistry, with expertise in restorative care, cosmetic treatments, implants, and family-focused oral health.
           </p>
           <div class="mt-8 flex flex-wrap gap-4">
-            <a class="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-white font-semibold shadow-xl shadow-primary/30 hover:-translate-y-0.5 transition" href="doctors.html">Meet The Doctors</a>
-            <a class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-navy font-semibold border-2 border-white/20 hover:border-white/40 transition" href="team.html">Meet Our Team</a>
+            <a class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary via-teal-500 to-cyan-400 hover:from-primary/90 hover:to-cyan-300 px-8 py-4 text-white font-semibold shadow-xl shadow-primary/30 hover:-translate-y-0.5 transition" href="doctors.html">Meet The Doctors</a>
+            <a class="inline-flex items-center justify-center rounded-full bg-white/95 backdrop-blur px-8 py-4 text-navy font-semibold border-2 border-white/30 hover:bg-white hover:border-white transition" href="team.html">Meet Our Team</a>
           </div>
         </div>
         <img
-          class="rounded-3xl shadow-2xl w-full max-w-md mx-auto aspect-[4/5] object-cover object-top"
+          class="rounded-3xl shadow-2xl w-full max-w-md mx-auto aspect-[4/5] object-cover object-top border-4 border-white/10"
           src="images/web/office-UGAD5219.jpg"
           alt="Dr. James Kyros and Dr. Meer Ahmed at Brookline Family Dentistry"
           loading="lazy"
@@ -269,23 +319,23 @@
       </div>
     </section>
 
-    <section class="py-24 sm:py-32 bg-white" id="reviews" aria-label="Patient reviews">
+    <section class="reviews-luxury-bg relative py-24 sm:py-32 overflow-hidden" id="reviews" aria-label="Patient reviews">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-2xl mx-auto text-center">
-          <p class="font-heading text-sm font-bold tracking-wide text-primary uppercase">Patient Stories</p>
-          <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold text-navy">What Our Patients Say</h2>
-          <p class="mt-4 text-slate">Real feedback from families who trust Brookline Family Dentistry with their smiles.</p>
+          <p class="font-sans text-xs uppercase tracking-[0.2em] font-extrabold text-primary">Patient Stories</p>
+          <h2 class="mt-3 font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy">What Our Patients Say</h2>
+          <p class="mt-4 text-slate text-base sm:text-lg">Real feedback from families who trust Brookline Family Dentistry with their smiles.</p>
         </div>
 
         <div class="mt-16 grid md:grid-cols-[220px_1fr] gap-6 items-stretch" data-slider="testimonials">
-          <aside class="rounded-3xl bg-ice/60 p-8 flex flex-col items-center justify-center text-center shadow-lg shadow-navy/5" aria-label="Overall rating">
-            <p class="text-sm font-semibold text-slate">Average Rating</p>
+          <aside class="rounded-3xl bg-gradient-to-br from-ice/90 to-white/95 p-8 flex flex-col items-center justify-center text-center shadow-lg shadow-navy/5 border border-primary/10" aria-label="Overall rating">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate">Average Rating</p>
             <p class="font-heading text-5xl font-extrabold text-navy mt-2">4.9</p>
             <p class="text-primary text-lg mt-2" aria-hidden="true">★★★★★</p>
             <p class="mt-3 text-xs text-slate">Across routine, cosmetic, and restorative visits</p>
           </aside>
 
-          <article class="relative rounded-3xl bg-white p-8 sm:p-10 shadow-xl shadow-navy/10" id="testimonial-card">
+          <article class="relative rounded-3xl bg-white/95 backdrop-blur-sm p-8 sm:p-10 shadow-xl shadow-navy/10 border border-line/60" id="testimonial-card">
             <p class="absolute top-4 right-8 font-heading text-6xl text-primary/20" aria-hidden="true">&ldquo;</p>
             <p class="text-primary" id="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</p>
             <h3 class="mt-3 font-heading text-xl font-bold text-navy" id="testimonial-title">The Team Is Amazing</h3>
@@ -303,24 +353,24 @@
             </div>
 
             <div class="mt-6 h-1.5 w-full rounded-full bg-ice overflow-hidden">
-              <span class="block h-full rounded-full bg-primary" id="testimonial-progress"></span>
+              <span class="block h-full rounded-full bg-gradient-to-r from-primary to-cyan-400" id="testimonial-progress"></span>
             </div>
             <p class="mt-2 text-xs font-medium text-slate" id="testimonial-rating">4.9/5 Rating</p>
           </article>
         </div>
 
         <div class="mt-8 flex items-center justify-center gap-4" aria-label="Review controls">
-          <button class="h-10 w-10 rounded-full bg-ice text-navy font-bold hover:bg-primary hover:text-white transition" type="button" data-action="prev" aria-label="Previous testimonial">&lt;</button>
+          <button class="h-10 w-10 rounded-full bg-white text-navy font-bold hover:bg-primary hover:text-white transition shadow-sm border border-line" type="button" data-action="prev" aria-label="Previous testimonial">&lt;</button>
           <div class="flex items-center gap-2" id="reviews-dots"></div>
-          <button class="h-10 w-10 rounded-full bg-ice text-navy font-bold hover:bg-primary hover:text-white transition" type="button" data-action="next" aria-label="Next testimonial">&gt;</button>
+          <button class="h-10 w-10 rounded-full bg-white text-navy font-bold hover:bg-primary hover:text-white transition shadow-sm border border-line" type="button" data-action="next" aria-label="Next testimonial">&gt;</button>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-ice/60" id="contact">
+  <footer class="footer-luxury-bg relative" id="contact">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 grid lg:grid-cols-2 gap-10 items-stretch">
-      <div class="relative rounded-3xl overflow-hidden shadow-xl shadow-navy/10 min-h-[320px]">
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-navy/15 min-h-[320px] border-4 border-white/80">
         <iframe
           class="h-full w-full min-h-[320px]"
           title="Brookline Dentistry map"
@@ -335,12 +385,12 @@
         />
       </div>
 
-      <div class="rounded-3xl bg-white p-8 sm:p-10 shadow-xl shadow-navy/10">
-        <p class="font-heading text-sm font-bold tracking-wide text-primary uppercase">Visit Our Office</p>
+      <div class="rounded-3xl bg-white/95 backdrop-blur-md p-8 sm:p-10 shadow-2xl shadow-navy/10 border border-white">
+        <p class="font-sans text-xs uppercase tracking-[0.2em] font-extrabold text-primary">Visit Our Office</p>
         <h2 class="mt-3 font-heading text-2xl sm:text-3xl font-extrabold text-navy">Your Neighborhood Dental Home In Brookline</h2>
 
         <div class="mt-8 flex items-start gap-4">
-          <div class="h-10 w-10 shrink-0 rounded-full bg-ice flex items-center justify-center font-heading font-bold text-primary" aria-hidden="true">A</div>
+          <div class="h-10 w-10 shrink-0 rounded-full bg-ice flex items-center justify-center font-heading font-bold text-primary shadow-sm" aria-hidden="true">A</div>
           <div>
             <p class="text-xs font-semibold uppercase tracking-wide text-slate">Address</p>
             <p class="font-medium text-navy mt-1">Brookline Family Dentistry</p>
@@ -350,7 +400,7 @@
         </div>
 
         <div class="mt-6 flex items-start gap-4">
-          <div class="h-10 w-10 shrink-0 rounded-full bg-ice flex items-center justify-center font-heading font-bold text-primary" aria-hidden="true">H</div>
+          <div class="h-10 w-10 shrink-0 rounded-full bg-ice flex items-center justify-center font-heading font-bold text-primary shadow-sm" aria-hidden="true">H</div>
           <div>
             <p class="text-xs font-semibold uppercase tracking-wide text-slate">Hours</p>
             <p class="text-slate mt-1">Monday: 8:00am - 4:00pm</p>
@@ -361,14 +411,14 @@
         </div>
 
         <div class="mt-6 flex items-start gap-4">
-          <div class="h-10 w-10 shrink-0 rounded-full bg-ice flex items-center justify-center font-heading font-bold text-primary" aria-hidden="true">P</div>
+          <div class="h-10 w-10 shrink-0 rounded-full bg-ice flex items-center justify-center font-heading font-bold text-primary shadow-sm" aria-hidden="true">P</div>
           <div>
             <p class="text-xs font-semibold uppercase tracking-wide text-slate">Phone</p>
             <p class="mt-1"><a class="font-medium text-navy hover:text-primary transition" href="tel:+14125313155">(412) 531-3155</a></p>
           </div>
         </div>
 
-        <a class="mt-8 inline-flex items-center justify-center w-full sm:w-auto rounded-full bg-primary px-8 py-4 text-white font-semibold shadow-xl shadow-primary/30 hover:-translate-y-0.5 transition" href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf" target="_blank" rel="noopener noreferrer">Schedule Appointment</a>
+        <a class="mt-8 inline-flex items-center justify-center w-full sm:w-auto rounded-full bg-gradient-to-r from-[#1c7873] via-[#248b86] to-[#2eafc2] hover:from-[#166460] hover:to-[#269cb0] px-8 py-4 text-white font-semibold shadow-xl shadow-primary/30 hover:-translate-y-0.5 transition" href="https://appt.link/meet-with-brookline-family-dentistry-TK3f1mVf" target="_blank" rel="noopener noreferrer">Schedule Appointment</a>
       </div>
     </div>
   </footer>

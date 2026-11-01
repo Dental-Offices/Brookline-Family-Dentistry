@@ -7,7 +7,7 @@
   <meta name="description" content="Meet Dr. James Kyros and Dr. Meer Ahmed — the experienced, compassionate dental team at Brookline Family Dentistry in Pittsburgh, PA." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -21,8 +21,9 @@
             slate: '#625e59',
           },
           fontFamily: {
-            heading: ['Montserrat', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
+            heading: ['"Playfair Display"', 'Georgia', 'serif'],
+            body: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
           },
         },
       },
@@ -55,7 +56,9 @@
     ------------------------------------------------ */
 
     .doctors-intro {
-      background: #eef6f8;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(46, 175, 194, 0.16) 0%, transparent 60%),
+        linear-gradient(180deg, #f2f9fb 0%, #e5f3f7 100%);
       padding: clamp(28px, 4vw, 48px) 0;
       text-align: center;
       border-bottom: 1px solid #cfe6ea;
@@ -71,11 +74,17 @@
 
     /* Doctor section alternating backgrounds */
     .doctors-section {
+      background:
+        radial-gradient(circle at 10% 20%, rgba(46, 175, 194, 0.08) 0%, transparent 45%),
+        linear-gradient(180deg, #ffffff 0%, #f6fbfd 50%, #ffffff 100%);
       padding: clamp(48px, 7vw, 96px) 0;
     }
 
     .doctors-section--light {
-      background: #eef6f8;
+      background:
+        radial-gradient(circle at 90% 20%, rgba(36, 139, 134, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 10% 80%, rgba(46, 175, 194, 0.08) 0%, transparent 40%),
+        linear-gradient(180deg, #eef7f9 0%, #e3f2f6 50%, #eef7fa 100%);
     }
 
     /* Two-column profile layout */
