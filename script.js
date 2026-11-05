@@ -29,20 +29,29 @@ function setupNavToggle(toggleSelector, navSelector) {
 
 setupNavToggle('#menu-toggle', '#main-nav');
 
-// Scroll reveal for service pages
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const delay = entry.target.dataset.delay ? parseInt(entry.target.dataset.delay) : 0;
-        setTimeout(() => entry.target.classList.add('visible'), delay);
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12 }
-);
-document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+// Reveal content as it enters the viewport, while respecting reduced motion.
+const revealElements = document.querySelectorAll('.reveal');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+  revealElements.forEach((element) => element.classList.add('visible'));
+} else {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const delay = Math.min(Number.parseInt(entry.target.dataset.delay, 10) || 0, 480);
+        entry.target.style.setProperty('--reveal-delay', `${delay}ms`);
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  revealElements.forEach((element) => revealObserver.observe(element));
+}
 setupNavToggle('#hamburger', '#nav');
 
 const testimonials = [
